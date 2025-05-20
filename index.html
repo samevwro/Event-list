@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div>
+    <h3>Event Planner</h3>
+</div>
+<div class="container">
+    <div class="row">
+        <table id="mainTable" class="col-md" style="border: 3px">
+            <div>
+                <tr>
+                    <th>Event</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Notes</th>
+                </tr>
+            </div>
+            <div>
+                <tr>
+                    <!--this is where that date needs to be added to the table -->
+                </tr>
+            </div>
+        </table>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md">
+        <form action="text" id="event" aria-placeholder="Event"></form>
+        <form action="date" id="startDate"></form>
+        <form action="date" id="endDate"></form>
+    </div> 
+</div class="row">
+    <div class="col-lg">
+        <form action="text" id="notes"></form>
+    </div>
+    <script src="node_modules/bootstrap/dist/css/bootstrap.css"></script>
+    <script src="index.js"></script>
+</body>
+</html>
