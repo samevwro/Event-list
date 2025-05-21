@@ -1,0 +1,6 @@
+{
+    "Events":[
+        {"id": "1", "Event": "first event", "Start Date": "12/23/2025", "End Date": "12/24/2025", "Notes": "To be continued"},
+        {"id": "2", "Event": "Second event", "Start Date": "12/25/2025", "End Date": "12/26/2025", "Notes": "To be continued pt. 2"}
+    ]
+}
