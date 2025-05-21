@@ -4,14 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="index.css">
+    
 </head>
 <body>
-<div>
+<div class="text-center">
     <h3>Event Planner</h3>
 </div>
-<div class="container">
+<div class="container text-center">
     <div class="row">
-        <table id="mainTable" class="col-md" style="border: 3px">
+        <table id="mainTable " class="col-md" >
             <div>
                 <tr>
                     <th>Event</th>
@@ -20,26 +23,47 @@
                     <th>Notes</th>
                 </tr>
             </div>
-            <div>
-                <tr>
+            <div id="tableInput">
+                <tr class="bg-warning-subtle">
+                    <td>First event</td>
+                    <td>today</td>
+                    <td>next week</td>
+                    <td>To be continued</td>
                     <!--this is where that date needs to be added to the table -->
                 </tr>
             </div>
         </table>
     </div>
-</div>
-
-<div class="row">
-    <div class="col-md">
-        <form action="text" id="event" aria-placeholder="Event"></form>
-        <form action="date" id="startDate"></form>
-        <form action="date" id="endDate"></form>
-    </div> 
-</div class="row">
-    <div class="col-lg">
-        <form action="text" id="notes"></form>
+</div><br>
+<form>
+    <div class="row">
+        <div class="col ">
+            <div class="form-floating">
+                <label for="eventInput">Event</label> 
+                <input type="text" id="eventInput" class="form-select">
+            </div>
+            <br> 
+            <div class="form-floating">
+                <input type="date" id="startDate" class="form-select">
+                <label for="startDate">Start Date</label>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-floating">
+                <textarea class="form-select" name="notesInput" id="notesInput"></textarea>
+                <label for="notesInput">Notes</label>
+            </div>
+            <br>
+            <div class="form-floating">
+                <input type="date" id="endDate" class="form-select">
+                <label for="endDate">End Date</label>
+            </div>
+        </div> 
     </div>
-    <script src="node_modules/bootstrap/dist/css/bootstrap.css"></script>
+    <div class="text-center">
+        <button type="button" class="btn btn-primary">Submit</button>
+    </div>
+</form>
     <script src="index.js"></script>
 </body>
 </html>

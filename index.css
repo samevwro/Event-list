@@ -1,0 +1,12 @@
+table, th, td {
+    border: 3px solid black;
+    border-collapse: collapse;
+}
+body{
+    padding: 2%;
+}
+form {
+    margin-left: 90px;
+    margin-right: 90px;
+    text-align: center;
+}    
