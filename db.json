@@ -1,16 +1,11 @@
 {
-    "Events":[
-        {"id": "1", 
-        "Event": "first event", 
-        "StartDate": "12/23/2025", 
-        "EndDate": "12/24/2025", 
-        "Notes": "To be continued"
-    },
-        {"id": "2", 
-        "Event": "Second event", 
-        "StartDate": "12/25/2025", 
-        "EndDate": "12/26/2025", 
-        "Notes": "To be continued pt. 2"
+  "Events": [
+    {
+      "id": "0",
+      "Event": "Bobs Birthday",
+      "StartDate": "2025-05-27",
+      "EndDate": "2025-05-28",
+      "Notes": "get a gift"
     }
-    ]
+  ]
 }
