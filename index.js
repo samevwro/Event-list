@@ -10,7 +10,6 @@ async function dbIdLength() {
     .then(function(items){
         let lastObjectIndex = items[(Object.keys(items).length)-1].id
         let lastId = parseInt(lastObjectIndex)+1
-        console.log(lastId)
         dbJsonSize =+lastId
     })
 }

@@ -1,13 +1,6 @@
 {
   "Events": [
     {
-      "id": "0",
-      "Event": "bobs wedding",
-      "StartDate": "",
-      "EndDate": "",
-      "Notes": "wedding gift"
-    },
-    {
       "id": "1",
       "Event": "eddies ball",
       "StartDate": "2025-05-30",
