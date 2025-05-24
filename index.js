@@ -1,27 +1,40 @@
 
 const tableContainer = document.getElementById("tableInput")
 var dbJsonSize = 0
-dbIdLength()
+
+try{
+    dbIdLength();
+}
+catch(err){
+    throw 'DbIDLenght error'
+}
+
+
 async function dbIdLength() {
+    
     await fetch("http://localhost:3000/Events")
+    
     .then(function(list){
         return list.json()
     })
     .then(function(items){
+        
+        dbJsonSize = 0
+        
         let lastObjectIndex = items[(Object.keys(items).length)-1].id
         let lastId = parseInt(lastObjectIndex)+1
+        
         dbJsonSize =+lastId
+        console.log(lastId)
     })
 }
 async function onLoadAddTableData(list) {
     const URL = "http://localhost:3000/Events"
-
     fetch(URL)
     .then(function(response){
         return response.json()
     })
     .then(function(message){
-        console.log(dbJsonSize)
         tableContainer.innerHTML = ""
         for(let i = 0; i < Object.keys(message).length; i++){
             const newRow = document.createElement("tr")
@@ -33,12 +46,15 @@ async function onLoadAddTableData(list) {
                 <td>${message[i].StartDate}</td>
                 <td>${message[i].EndDate}</td>
                 <td>${message[i].Notes}</td>
-                <td><button onclick="deleteEventBtn(${i})" type="button" class="btn btn-danger" id="deleteBtn${i}">Delete</button></td>`
+                <td><button onclick="deleteEventBtn(${message[i].id})" type="button" class="btn btn-danger" id="deleteBtn${i}">Delete</button></td>`
             appendedRow.insertAdjacentHTML('beforeend', eventHTML)
-            dbJsonSize =+ 1
+            
+            
         }}
+        
     )
-    
+    dbJsonSize += 1
+    console.log(dbJsonSize)
 }
 
 onLoadAddTableData()
@@ -51,7 +67,7 @@ async function onCreateEventClick(){
     const endDateValue = document.getElementById("endDate").value
     
     const JsonValues = { id: ""+dbJsonSize, Event: ""+eventValue, StartDate: ""+startDateValue, EndDate: ""+endDateValue, Notes: ""+notesValue }
-    dbJsonSize =+ 1
+    
     const response = await fetch("http://localhost:3000/Events", {
         method: "POST",
         headers: {'Content-Type': 'application/json'},
@@ -63,14 +79,16 @@ async function onCreateEventClick(){
     document.getElementById("endDate").value = ''
     onLoadAddTableData()
     const newlyCreatedEvent = await response.json()
+    console.log(dbJsonSize)
 }
 
 async function deleteEventBtn(id){
     const deleteBtn = document.getElementById(`row${id}`)
-    console.log(id)
+    //document.parentNode.removeChild(deleteBtn)
     await fetch(`http://localhost:3000/Events/${(id)}`,{
         method: "DELETE"
     })
-    onLoadAddTableData()
+    await onLoadAddTableData()
+    console.log(dbJsonSize)
 }
 
