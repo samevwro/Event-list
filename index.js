@@ -57,7 +57,7 @@ async function onCreateEventClick(){
     const startDateValue = document.getElementById("startDate").value;
     const endDateValue = document.getElementById("endDate").value;
     if(eventValue == ""||notesValue ==""||startDateValue ==""||endDateValue ==""){
-        alert("Warning Input Empty!!")
+        alert("Warning Input Cannot Be Empty!!")
     }else{
         const JsonValues = { id: ""+dbJsonSize, Event: ""+eventValue, StartDate: ""+startDateValue, EndDate: ""+endDateValue, Notes: ""+notesValue };
         
@@ -76,7 +76,6 @@ async function onCreateEventClick(){
 }
 //This function deletes items from the data base file;
 async function deleteEventBtn(id){
-    const deleteBtn = document.getElementById(`row${id}`);
     await fetch(`http://localhost:3000/Events/${(id)}`,{
         method: "DELETE"
     })
