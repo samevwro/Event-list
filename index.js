@@ -1,7 +1,6 @@
 
 const tableContainer = document.getElementById("tableInput");
-//Using this variable it keeps track of how many objects are in the JSON file,
-//so the new event can be added at the end with the proper id
+//Using this variable it keeps track of how many objects are in the JSON file
 var dbJsonSize = 0;
 
 try{
