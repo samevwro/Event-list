@@ -1,18 +1,25 @@
 {
   "Events": [
     {
-      "id": "33",
-      "Event": "bobs party ",
+      "id": "0",
+      "Event": "earls birthday",
       "StartDate": "2025-05-30",
       "EndDate": "2025-05-30",
-      "Notes": "bring sides"
+      "Notes": "buy a gift"
     },
     {
-      "id": "34",
-      "Event": "earls birthday",
-      "StartDate": "2025-05-29",
-      "EndDate": "2025-05-29",
-      "Notes": "buy a gift"
+      "id": "1",
+      "Event": "bobs wedding",
+      "StartDate": "2025-05-31",
+      "EndDate": "2025-05-31",
+      "Notes": "buy a suit"
+    },
+    {
+      "id": "2",
+      "Event": "pauls party",
+      "StartDate": "2025-06-06",
+      "EndDate": "2025-06-06",
+      "Notes": "bring a side"
     }
   ]
 }

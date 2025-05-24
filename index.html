@@ -1,12 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="index.css">
+    <!--I used inline css styles to make sure the table rows all have borders when a new one is appended-->
+    <style>
+        table, th, td {
+        border: 3px solid black;
+        border-collapse: collapse;
+    }
+    body{
+        padding: 3%;
+    }
+    form {
+        margin-left: 5%;
+        margin-right: 5%;
+        text-align: center;
+    }    
+    #formInput {
+        border: 3px solid black;
+        border-radius: 10px;
+        background-color: rgb(132, 132, 132);
+        max-width: 75%;
+        margin-left: auto;
+        margin-right: auto;
+    }
     
+    </style>
 </head>
 <body>
 <div class="text-center">
@@ -25,15 +47,18 @@
                 </tr>
             </thead>
             <tbody id="tableInput">
-                        <!--this is where that date needs to be added to the table -->
+                        <!--this is where that data is added to the table to be displayed -->
             </tbody>
             
         </table>
     </div>
 </div><br>
-<form>
-    <div class="row">
-        <div class="col ">
+<div class="sticky-bottom" id="formInput">
+    <br>
+    <form class="text-center">
+    <!--this is where the inputs are for the table-->
+    <div class="row ">
+        <div class="col-sm ">
             <div class="form-floating">
                 <input type="text" id="eventInput" class="form-select">
                 <label for="eventInput">Event</label> 
@@ -44,7 +69,7 @@
                 <label for="startDate">Start Date</label>
             </div>
         </div>
-        <div class="col">
+        <div class="col-sm">
             <div class="form-floating">
                 <textarea class="form-select" name="notesInput" id="notesInput"></textarea>
                 <label for="notesInput">Notes</label>
@@ -58,8 +83,9 @@
     </div><br>
     <div class="text-center">
         <button onclick="onCreateEventClick()" type="button" class="btn btn-primary" id="submitBtn">Submit</button>
-    </div>
+    </div><br>
 </form>
+</div>
     <script src="index.js"></script>
 </body>
 </html>
