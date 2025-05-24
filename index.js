@@ -25,7 +25,7 @@ async function dbIdLength() {
     });
 };
 //This function calls to the data base file then creates table rows and date and adds all the data to the table;
-async function onLoadAddTableData(list) {
+async function onLoadAddTableData() {
     const URL = "http://localhost:3000/Events";
     fetch(URL)
     .then(function(response){
